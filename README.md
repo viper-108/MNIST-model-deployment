@@ -18,43 +18,6 @@ The system is designed to streamline operations in a machine learning workflow w
 5. MLflow Model Registry: Service for model versioning and stage management.
 6. Model Serving: Component that deploys models for inference.
 
-**Architecture**
-
-The architecture is outlined below to show the flow of data and requests through different components of the system:
-
-+-------------------+     logs    +-----------------------+
-|                   | ----------> |                       |
-| Client Environments           | | MLflow Tracking Server |
-|                   | <--------  |                       |
-+-------------------+     stores  +-----------+-----------+
-        |                                      |
-        | logs                                | stores
-        |                                      |
-        v                                      v
-+-------------------+                    +-----+-----+
-|                   |                    |           |
-|   Artifact Store  | <--------------->  | Metadata  |
-|                   |      metadata     | Database  |
-+-------------------+                    +-----+-----+
-        ^                                      |
-        | registers                            |
-        |                                      |
-        |          +-------------------+       |
-        +--------> |                   |       |
-                   | MLflow Model     | <-----+
-                   | Registry         |
-                   |                   |
-                   +---------+---------+
-                             |
-                             | deploys
-                             |
-                   +---------v---------+       +-------------------+
-                   |                   |       |                   |
-                   | Model Serving     | ----> | Inference Requests|
-                   |                   |       |                   |
-                   +-------------------+       +-------------------+
-
-
 **Prerequisites**
 
 Before setting up the system, ensure the following prerequisites are met:
