@@ -22,25 +22,20 @@ def main():
     mlflow.tensorflow.autolog()
 
     with mlflow.start_run():
-        # Load the data
+
         (x_train, y_train), (x_test, y_test) = load_data()
 
-        # Build the model
         model = build_model()
 
-        # Compile the model
         model.compile(optimizer='adam',
                       loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                       metrics=['accuracy'])
 
-        # Train the model
         model.fit(x_train, y_train, epochs=5, validation_data=(x_test, y_test))
 
-        # Evaluate the model
         test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=2)
         print(f"Test accuracy: {test_accuracy:.4f}")
 
-        #save model
         model.save('mnist-new-model.keras')
         
 if __name__ == "__main__":
