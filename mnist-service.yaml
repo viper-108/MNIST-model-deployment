@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: mnist-service
 spec:
-  type: ClusterIP  # Use NodePort or LoadBalancer if external access is required
+  type: ClusterIP 
   ports:
   - port: 9201
     targetPort: 9201
