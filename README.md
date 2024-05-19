@@ -27,6 +27,8 @@ Before setting up the system, ensure the following prerequisites are met:
 3. Kubernetes (optional, for scalable deployment)
 4. Mlflow
 
+See the architecture file to get the flow diagram of whole flow.
+
 **Setup and Installation**
 
 1. MLflow Tracking Server
