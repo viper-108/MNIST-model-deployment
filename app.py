@@ -4,7 +4,6 @@ import tensorflow as tf
 
 app = Flask(__name__)
 
-# Load the model (assuming it is in the same directory as this script)
 model = tf.keras.models.load_model('mnist_model.h5')
 
 def preprocess_image(image):
